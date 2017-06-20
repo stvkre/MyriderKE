@@ -19,19 +19,21 @@
         android:text="MyRiderKE"
         android:layout_marginTop="35dp"
         android:id="@+id/textView"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/icons"
         android:textSize="40sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textStyle="bold" />
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="100sp"
+        android:layout_height="40sp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:progressBackgroundTint="@color/colorAccent"/>
+        android:layout_marginBottom="23dp"
+        android:background="@color/primary_light"
+        android:text="Request Ride" />
+
 
 </RelativeLayout>
