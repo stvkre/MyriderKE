@@ -26,13 +26,13 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/requestRideButton"
         android:layout_width="100sp"
         android:layout_height="40sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="23dp"
-        android:background="@color/primary_light"
+        android:background="@color/accent"
         android:text="Request Ride" />
 
 
