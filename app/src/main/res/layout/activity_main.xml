@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.stephen.myriderke.MainActivity">
+    tools:context="com.example.stephen.myriderke.MainActivity"
+    android:background="#000000">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/bike"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MyRiderKE"
+        android:layout_marginTop="35dp"
+        android:id="@+id/textView"
+        android:textColor="@color/colorAccent"
+        android:textSize="40sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="168dp"
-        tools:layout_editor_absoluteY="200dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:progressBackgroundTint="@color/colorAccent"/>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
