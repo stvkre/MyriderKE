@@ -33,12 +33,19 @@ public class RiderActivity extends AppCompatActivity implements OnMapReadyCallba
         mGoogleMap = googleMap;
 
         // getting default location once map is launched
-        goToLocation(-1.300404,36.7848483);
+        goToLocationZoom(-1.300404,36.7848483, 19);
     }
 
     private void goToLocation(double lat, double lng) {
         LatLng ll = new LatLng(lat, lng);
         CameraUpdate update = CameraUpdateFactory.newLatLng(ll);
+        mGoogleMap.moveCamera(update);
+    }
+// setting default map zoom height
+
+    private void goToLocationZoom(double lat, double lng, float zoom) {
+        LatLng ll = new LatLng(lat, lng);
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(ll, zoom);
         mGoogleMap.moveCamera(update);
     }
 }
