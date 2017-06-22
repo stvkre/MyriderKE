@@ -16,6 +16,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
@@ -88,6 +89,13 @@ public class RiderActivity extends AppCompatActivity implements OnMapReadyCallba
         double lat = address.getLatitude();
         double lng = address.getLongitude();
         goToLocationZoom(lat, lng, 19);
+
+        // added markers to location set by user
+
+        MarkerOptions options = new MarkerOptions()
+                .title(locality)
+                .position(new LatLng(lat, lng));
+        mGoogleMap.addMarker(options);
 
     }
 }
