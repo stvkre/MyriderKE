@@ -41,6 +41,10 @@
         <meta-data
             android:name="com.google.gms.version"
             android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.stephen.myriderke.MainActivity">
+        </meta-data>
 
         <activity android:name=".RiderActivity"></activity>
     </application>
