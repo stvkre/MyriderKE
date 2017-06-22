@@ -17,23 +17,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MyRiderKE"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="50dp"
         android:id="@+id/textView"
         android:textColor="@color/colorIcons"
-        android:textSize="40sp"
+        android:textSize="60sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/requestRideButton"
-        android:layout_width="100sp"
-        android:layout_height="40sp"
+        android:layout_width="120sp"
+        android:layout_height="50sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="23dp"
         android:background="@color/colorAccent"
-        android:text="Request Ride" />
+        android:text="Request Ride"
+        android:textSize="14sp"/>
 
 
 </RelativeLayout>
