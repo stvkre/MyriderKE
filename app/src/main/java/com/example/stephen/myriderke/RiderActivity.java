@@ -1,6 +1,8 @@
 package com.example.stephen.myriderke;
 
+import android.content.pm.PackageManager;
 import android.location.Geocoder;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,7 +43,21 @@ public class RiderActivity extends AppCompatActivity implements OnMapReadyCallba
         mGoogleMap = googleMap;
 
         // getting default location once map is launched
-        goToLocationZoom(-1.300404,36.7848483, 19);
+        // goToLocationZoom(-1.300404,36.7848483, 19);
+
+        // added permission to enable the app use GPS location
+
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mGoogleMap.setMyLocationEnabled(true);
     }
 
     private void goToLocation(double lat, double lng) {
@@ -61,7 +77,8 @@ public class RiderActivity extends AppCompatActivity implements OnMapReadyCallba
         EditText et = (EditText) findViewById(R.id.editText1);
         String location = et.getText().toString();
 
-        Geocoder gc = new Geocoder(this);
+// setting map to location set by the user
+        Geocoder gc = new Geocoder(this);  // takes string location and converts it to longitudes and latitudes
         List<android.location.Address> list =  gc.getFromLocationName(location, 3);
         android.location.Address address = list.get(0);
         String locality = address.getLocality();
