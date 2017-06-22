@@ -16,6 +16,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
@@ -74,6 +75,7 @@ public class RiderActivity extends AppCompatActivity implements OnMapReadyCallba
         mGoogleMap.moveCamera(update);
     }
 
+    Marker marker;
     public void geolocate(View view) throws IOException {
         EditText et = (EditText) findViewById(R.id.editText1);
         String location = et.getText().toString();
@@ -90,12 +92,18 @@ public class RiderActivity extends AppCompatActivity implements OnMapReadyCallba
         double lng = address.getLongitude();
         goToLocationZoom(lat, lng, 19);
 
+        // removing markers
+
+        if(marker != null) {
+            marker.remove();
+        }
+
         // added markers to location set by user
 
         MarkerOptions options = new MarkerOptions()
                 .title(locality)
                 .position(new LatLng(lat, lng));
-        mGoogleMap.addMarker(options);
+        marker = mGoogleMap.addMarker(options);
 
     }
 }
